@@ -2,11 +2,11 @@
 const dynamicData = {
     fr: {
         imageCover: "https://media.loot.co.za/images/x400/693981483873179215.jpg",
-        linkPaiement: "landing-2/page-fr.html"
+        linkPaiement: "page-fr.html"
     },
     es: {
         imageCover: "https://www.jaicobooks.com/wp-content/uploads/2022/12/j-2573-the-complete-book-of-sex-education-dr-rajan-bhonsle-m-d-and-dr-minnu-bhonsle-ph-d-.jpg",
-        linkPaiement: "landing-2/page-es.html"
+        linkPaiement: "page-es.html"
     }
 };
 
