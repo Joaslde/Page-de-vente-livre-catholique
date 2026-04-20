@@ -472,11 +472,26 @@
   60%  { transform: translateY(6px);  opacity: 0.9;  }
   100% { transform: translateY(0);    opacity: 1;    }
 }
+.pulse-arrow-container {
+  text-align: center;
+}
+
 .pulse-arrow {
-  font-size: 2.6rem;
-  color: var(--gold);
+  width: 80px;      /* Ajustez la largeur ici */
+  height: auto;
+  color: red;       /* Couleur ajustable */
   display: inline-block;
   animation: arrow-bounce 1.8s ease-in-out infinite;
   margin-top: 0.9rem;
-  line-height: 1;
+  margin-bottom: -2rem ;
+}
+
+/* Contrôle de l'épaisseur via le stroke-width du SVG */
+.pulse-arrow path {
+  stroke-width: 3;  /* Augmentez ce chiffre pour une flèche encore plus épaisse */
+}
+
+@keyframes arrow-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(15px); }
 }
