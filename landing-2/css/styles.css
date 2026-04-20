@@ -151,7 +151,7 @@
   .hero-bg-image {
     position: absolute;
     inset: 0;
-    background-image: url('https://assets.gqindia.com/photos/5cdc67000f4cc097cbdb145c/16:9/w_1600,c_limit/sex-positions-top-image.jpg');
+    background-image: url('https://cdni.pornpics.com/1280/7/634/39985653/39985653_060_636d.jpg');
     background-size: cover;
     background-position: center;
     filter: grayscale(80%) brightness(0.2);
@@ -164,7 +164,7 @@
   .hero-overlay {
     position: absolute;
     inset: 0;
-    background: linear-gradient(180deg, rgba(26,5,5,0.4) 0%, rgba(26,10,10,0.8) 40%, rgba(10,5,5,0.95) 100%);
+    background: linear-gradient(180deg, rgba(26, 5, 5, 0.267) 0%, rgba(26, 10, 10, 0.685) 40%, rgba(10, 5, 5, 0.74) 100%);
   }
   
   .hero-content {
@@ -243,8 +243,8 @@
   .guide-text .section-divider { margin: 0 0 2.5rem; max-width: 250px; }
   
   .benefits-list { list-style: none; display: flex; flex-direction: column; gap: 1.1rem; }
-  .benefit-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.2rem; background: rgba(255,140,0,0.05); border-left: 3px solid var(--orange-accent); border-radius: 0 4px 4px 0; transition: background 0.3s, transform 0.3s; }
-  .benefit-item:hover { background: rgba(255,140,0,0.1); transform: translateX(5px); }
+  .benefit-item { display: flex; align-items: flex-start; gap: 1rem; padding: 1.2rem; background: rgba(255,140,0,0.1); border-left: 3px solid var(--orange-accent); border-radius: 0 4px 4px 0; transition: background 0.3s, transform 0.3s; }
+  .benefit-item:hover { background: rgba(151, 84, 3, 0.644); transform: translateX(5px); }
   .benefit-title { font-family: 'Cormorant Garamond', serif; font-size: 1.2rem; font-weight: 600; color: var(--gold-light); margin-bottom: 0.3rem; }
   .benefit-desc { font-size: 0.9rem; color: rgba(245,237,224,0.7); line-height: 1.5; margin: 0; }
   .book-shadow { border-radius: 8px; box-shadow: 0 20px 40px rgba(0,0,0,0.8); border: 1px solid rgba(201,168,76,0.3); }
@@ -269,3 +269,240 @@
   /* ANIMATIONS */
   .reveal { opacity: 0; transform: translateY(30px); transition: opacity 0.8s ease, transform 0.8s ease; }
   .reveal.visible { opacity: 1; transform: translateY(0); }
+
+
+  /* ================================================================
+   ADDITIONS À COLLER À LA FIN DE css/styles.css
+   ================================================================ */
+
+
+/* ── 1. BOUTONS : animation pulse en boucle sur TOUS les .cta-button ── */
+/* (remplace/complète les règles existantes)                             */
+@keyframes pulse-btn {
+  0%   { transform: scale(1);    box-shadow: 0 0 0 0 rgba(255, 77, 77, 0.65); }
+  50%  { transform: scale(1.035); box-shadow: 0 0 22px 10px rgba(255, 77, 77, 0); }
+  100% { transform: scale(1);    box-shadow: 0 0 0 0 rgba(255, 77, 77, 0); }
+}
+.cta-button {
+  animation: pulse-btn 2.5s ease-in-out infinite;
+}
+.cta-button:hover {
+  /* on suspend la pulse au hover pour laisser l'effet hover prendre la main */
+  animation-play-state: paused;
+}
+
+/* ── 2. TEXTE BOUTON sur 2 lignes ── */
+.btn-text-lines {
+  display: inline-block;
+  line-height: 1.25;
+  text-align: center;
+  vertical-align: middle;
+  white-space: normal; /* permet le <br> de fonctionner */
+}
+
+
+/* ── 3. CTA 2 : plus large que la carte sur mobile, sans débordement ── */
+.wide-mobile-cta {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  max-width: 520px;  /* légèrement plus large qu'un col-md-6 standard */
+  margin: 0 auto;
+}
+.wide-mobile-cta .cta-button {
+  width: 100%;
+  justify-content: center;
+  padding: 1.2rem 2rem;
+}
+
+@media (max-width: 767px) {
+  .wide-mobile-cta {
+    /* dépasse légèrement le container sur mobile pour être plus large que la carte */
+    width: calc(100% + 2rem);
+    margin-left: -1rem;
+    margin-right: -1rem;
+    max-width: none;
+  }
+  .wide-mobile-cta .cta-button {
+    border-radius: 0; /* full-bleed sur mobile = bords carrés */
+    padding: 1.3rem 1rem;
+    letter-spacing: 0.1em;
+  }
+}
+
+
+/* ── 4. PREVIEW IMAGES GRID ── */
+.preview-images-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-top: 1.25rem;
+}
+.preview-img {
+  border-radius: 6px;
+  border: 1px solid rgba(201, 168, 76, 0.35);
+  transition: transform 0.35s ease, box-shadow 0.35s ease;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.5);
+}
+.preview-img:hover {
+  transform: scale(1.04) translateY(-3px);
+  box-shadow: 0 12px 30px rgba(201,168,76,0.25);
+}
+
+/* Sur mobile : empilement vertical */
+@media (max-width: 767px) {
+  .preview-images-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+    margin-top: 1.5rem;
+  }
+}
+
+
+/* ── 5. CENTRAGE de la section Maîtrise ── */
+/* Override les règles "text-align: left" existantes pour guide-text */
+.guide-text .section-label,
+.guide-text .section-title {
+  text-align: center !important;
+}
+.guide-text .section-divider {
+  margin-left: auto !important;
+  margin-right: auto !important;
+  max-width: 300px;
+}
+.guide-text .gold-subtitle {
+  text-align: center;
+  display: block;
+}
+
+/* Benefit items centrés (classe .centered-list) */
+.centered-list .benefit-item {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  border-left: none;
+  border-bottom: 2px solid var(--orange-accent);
+  padding-bottom: 1.4rem;
+  background: transparent;
+}
+@media (max-width: 767px) {.centered-list{margin-left:-2rem;}}
+
+
+.centered-list .benefit-item:hover {
+  transform: translateY(-5px) !important;
+  background: rgba(255, 140, 0, 0.05);
+}
+.centered-list .benefit-icon {
+  margin-bottom: 0.6rem;
+}
+
+
+/* ── 6. FEATURE BOX avec image en bas ── */
+.feature-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+}
+.feature-box-img {
+  width: 100%;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 4px;
+  margin-top: 1.5rem;
+  opacity: 0.82;
+  filter: grayscale(35%) brightness(0.9);
+  transition: opacity 0.3s, filter 0.3s;
+}
+.feature-box:hover .feature-box-img {
+  opacity: 1;
+  filter: grayscale(0%) brightness(1);
+}
+
+
+/* ── 7. LOGOS DE PAIEMENT ── */
+.payment-logos-row {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 0.85rem;
+}
+
+/* Redéfinition propre du cercle pour usage texte (pas image) */
+.payment-circle {
+  width: 62px;
+  height: 62px;
+  border-radius: 50%;
+  border: 2px solid var(--gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  font-weight: 700;
+  cursor: default;
+  transition: transform 0.25s ease;
+}
+.payment-circle:hover {
+  transform: scale(1.1);
+}
+
+.payment-momo {
+  background: #FFCB00;
+  color: #1a0505;
+  font-family: 'Cinzel', serif;
+  font-size: 0.6rem;
+  letter-spacing: 0.03em;
+}
+.payment-wave {
+  background: #1E81B0;
+  color: #ffffff;
+  font-family: 'Cinzel', serif;
+  font-size: 0.58rem;
+  letter-spacing: 0.03em;
+}
+.payment-visa {
+  background: #1A1F71;
+  color: #F7B600;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  font-style: italic;
+}
+.payment-mc {
+  background: transparent;
+  border-color: rgba(201,168,76,0.4);
+  overflow: hidden;
+  padding: 0;
+}
+.payment-mc svg {
+  display: block;
+}
+
+
+/* ── 8. ILLUSTRATION DISCRÉTION (SVG) ── */
+.discretion-svg {
+  width: 100%;
+  max-width: 220px;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  filter: drop-shadow(0 4px 14px rgba(201, 168, 76, 0.3));
+}
+
+
+/* ── 9. FLÈCHE PULSANTE (téléchargement) ── */
+@keyframes arrow-bounce {
+  0%   { transform: translateY(0);    opacity: 1;    }
+  40%  { transform: translateY(12px); opacity: 0.75; }
+  60%  { transform: translateY(6px);  opacity: 0.9;  }
+  100% { transform: translateY(0);    opacity: 1;    }
+}
+.pulse-arrow {
+  font-size: 2.6rem;
+  color: var(--gold);
+  display: inline-block;
+  animation: arrow-bounce 1.8s ease-in-out infinite;
+  margin-top: 0.9rem;
+  line-height: 1;
+}
